@@ -19,6 +19,33 @@ $(function () {
     pwd: [
       /^[\S]{6,12}$/
       ,'密码必须6到12位，且不能出现空格'
-    ] 
+    ],
+    // 检验两次密码是否一致
+    repwd : function (value) {
+      // 通过形参拿到的是确认密码框的内容，需要获取密码框的内容，进行等于判断，
+      // 错误return一个错误消息
+      // 通过属性选择器选择
+      var pwd = $('.reg-box [name=password]').val();
+      if (pwd !== value) {
+        return '两次密码不一致';
+      }
+    }
+  })
+
+  // 监听注册表单的提交事件
+  var layer = layui.layer;
+  $('#form_reg').on('submit', function (e) {
+    e.preventDefault();
+    $.post('http://api-breakingnews-web.itheima.net/api/reguser', 
+    {username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val()},
+    function (res) {
+      if (res.status !== 0) {
+        return layer.msg(res.message);
+      }
+      console.log('注册成功');
+      layer.msg('注册成功');
+      // 模拟点击
+      $('#link_login').click();
+    })
   })
 })
