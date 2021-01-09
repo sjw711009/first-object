@@ -29,7 +29,7 @@
         <!-- 密码 -->
         <div class="layui-form-item">
           <i class="layui-icon layui-icon-password" style="font-size: 30px; color: #1E9FFF;"></i>
-          <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+          <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off"
           class="layui-input">
         </div>
         <!-- 登录按钮 -->
@@ -48,17 +48,18 @@
       <form class="layui-form" action="">
         <!-- 用户名 -->
         <div class="layui-form-item">
+          <!-- lay-verify="required" 说明这个表单是必填项,其他可选值去官网查文档即可 -->
           <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
             class="layui-input">
         </div>
         <!-- 密码 -->
         <div class="layui-form-item">
-          <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+          <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off"
             class="layui-input">
         </div>
         <!-- 再次输入密码 -->
         <div class="layui-form-item">
-          <input type="password" name="password" required lay-verify="required" placeholder="请再次输入密码" autocomplete="off"
+          <input type="password" name="password" required lay-verify="required|pwd" placeholder="请再次输入密码" autocomplete="off"
             class="layui-input">
         </div>
         <!-- 注册按钮 -->
@@ -74,6 +75,8 @@
     </div>
   </div>
 
+  <!-- 导入layui的js文件 -->
+  <script src="/assets/lib/layui/layui.all.js"></script>
   <!-- 导入jQuery -->
   <script src="/assets/lib/jquery.js"></script>
   <!-- 自己的脚本 -->
