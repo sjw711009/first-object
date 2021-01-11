@@ -1,0 +1,17 @@
+body {
+    background-color: #fff;
+    padding: 10px;
+}
+.layui-input {
+    width: 20%;
+}
+
+.layui-input-block {
+    height: 38px;
+    line-height: 38px;
+    margin: 15px 55px;
+}
+
+.layui-card {
+    background-color: rgb(242, 242, 242);
+}
