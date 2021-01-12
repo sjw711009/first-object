@@ -30,7 +30,6 @@ $('#img').on('change', function () {
 })
 
 $('.layui-btn-danger').on('click', function () {
-    var token = localStorage.getItem('token');
     var dataURL = $image
         .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
             width: 100,
@@ -47,7 +46,7 @@ $('.layui-btn-danger').on('click', function () {
             if (res.status !== 0) {
                 return layer.msg('更新头像失败！');
             }
-            window.parent.getUserInfo(token);
+            window.parent.getUserInfo();
         }
     });
 })

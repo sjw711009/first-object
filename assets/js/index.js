@@ -1,11 +1,9 @@
 $(function () {
-    let token = localStorage.getItem("token");
-    getUserInfo(token);
-    function getUserInfo(token) {
+    getUserInfo();
+    function getUserInfo() {
         $.ajax({
             method: "get",
             url: "/my/userinfo",
-            header: token,
             success: function (res) {
                 if (res.status === 0) {
                     renderImg(res.data);

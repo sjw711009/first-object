@@ -1,0 +1,25 @@
+html,body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fff;
+  padding: 15px;
+}
+
+.layui-card-header {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.layui-input {
+  width: 80%;
+}
+
+.layui-input-block {
+  height: 38px;
+  line-height: 38px;
+  margin: 15px 55px;
+}

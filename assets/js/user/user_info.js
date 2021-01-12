@@ -1,13 +1,11 @@
 $(function () {
-    let token = localStorage.getItem("token");
     let layer = layui.layer;
     let form = layui.form;
     getUserInfo(token);
-    function getUserInfo(token) {
+    function getUserInfo() {
         $.ajax({
             method: "get",
             url: "/my/userinfo",
-            header: token,
             success: function (res) {
                 if (res.status === 0) {
                     form.val('formUserInfo', res.data)
