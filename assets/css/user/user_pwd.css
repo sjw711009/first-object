@@ -1,0 +1,9 @@
+.layui-input {
+  width: 20%;
+}
+
+.layui-input-block {
+  height: 38px;
+  line-height: 38px;
+  margin: 15px 55px;
+}

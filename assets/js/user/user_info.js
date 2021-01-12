@@ -1,8 +1,8 @@
 $(function () {
     let layer = layui.layer;
     let form = layui.form;
-    getUserInfo(token);
-    function getUserInfo() {
+    getUserInfo2();
+    function getUserInfo2() {
         $.ajax({
             method: "get",
             url: "/my/userinfo",
@@ -14,7 +14,6 @@ $(function () {
             }
         })
     }
-    console.log(data);
 /*     function renderForm(data) {
         // let username = data.username;
         // let nickname = data.nickname || '';
@@ -27,11 +26,25 @@ $(function () {
     } */
     $('.layui-btn-primary').on('click', function (e) {
         e.preventDefault();
-        getUserInfo(token);
+        getUserInfo2();
     })
-    $('.seedData').on('click', function (e) {
+    $('.postData').on('click', function (e) {
         e.preventDefault();
-        seedData();
+        postData();
     })
-    function seedData() {}
+    function postData() {
+        let data = $('#user_edit_form').serialize();
+        $.ajax({
+            method: 'POST',
+            url: '/my/userinfo',
+            data: data,
+            success: function (res) {
+                if (res.status !== 0) {
+                    return layer.msg('更新失败')
+                }
+                getUserInfo2();
+                window.parent.getUserInfo();
+            }
+        })
+    }
 })
